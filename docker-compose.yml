@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_BACKEND_URL: http://localhost:3000  # 👈 Set your backend URL here
+    ports:
+      - '5173:80'
+    environment:
+      VITE_BACKEND_URL: http://localhost:3000  # 👈 Also pass as env (optional for runtime)
